@@ -60,20 +60,9 @@ final class ProfileViewController: BaseViewController {
                 //유저디폴트 삭제하고 다시 회원가입 화면
                 self?.viewModel.removeLoginValue()
                 
-                self?.setSignUpViewController()
+                self?.setRootViewController(vc: SignUpViewController())
             })
             .disposed(by: disposeBag)
     }
-    
-    private func setSignUpViewController() {
-        
-        //로그인 화면으로 루트뷰컨트롤러 바꾸기
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let sceneDelegate = windowScene?.delegate as? SceneDelegate
-            
-        let vc = SignUpViewController()
-                
-        sceneDelegate?.window?.rootViewController = vc
-        sceneDelegate?.window?.makeKeyAndVisible()
-    }
+
 }

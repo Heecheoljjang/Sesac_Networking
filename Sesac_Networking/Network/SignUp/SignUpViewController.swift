@@ -54,23 +54,11 @@ final class SignUpViewController: BaseViewController {
             .asDriver(onErrorJustReturn: false)
             .drive(onNext: { [weak self] value in
                 print("회원가입 밸류 \(value)")
-                value ? self?.setSignInViewController() : self?.showAlert()
+                value ? self?.setRootViewController(vc: SignInViewController()) : self?.showAlert()
             })
             .disposed(by: disposeBag)
     }
-    
-    private func setSignInViewController() {
-        
-        //로그인 화면으로 루트뷰컨트롤러 바꾸기
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let sceneDelegate = windowScene?.delegate as? SceneDelegate
-            
-        let vc = SignInViewController()
-                
-        sceneDelegate?.window?.rootViewController = vc
-        sceneDelegate?.window?.makeKeyAndVisible()
-    }
-    
+
     private func showAlert() {
         let alert = UIAlertController(title: "회원가입 실패", message: "다시 입력해주세요.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .cancel)
