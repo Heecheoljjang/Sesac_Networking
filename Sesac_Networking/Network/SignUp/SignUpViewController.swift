@@ -53,6 +53,7 @@ final class SignUpViewController: BaseViewController {
         viewModel.signUpSuccess
             .asDriver(onErrorJustReturn: false)
             .drive(onNext: { [weak self] value in
+                print("회원가입 밸류 \(value)")
                 value ? self?.setSignInViewController() : self?.showAlert()
             })
             .disposed(by: disposeBag)

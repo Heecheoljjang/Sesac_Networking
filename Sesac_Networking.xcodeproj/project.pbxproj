@@ -26,6 +26,7 @@
 		973A124C2912500D0082B1B8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A124B2912500D0082B1B8 /* BaseViewController.swift */; };
 		973A124F29127C0C0082B1B8 /* SesacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A124E29127C0C0082B1B8 /* SesacAPI.swift */; };
 		973A12512912806D0082B1B8 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12502912806D0082B1B8 /* Codable.swift */; };
+		973A12532912AB500082B1B8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12522912AB500082B1B8 /* Error.swift */; };
 		974165E92912464700AE0A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974165E82912464700AE0A2A /* AppDelegate.swift */; };
 		974165EB2912464700AE0A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974165EA2912464700AE0A2A /* SceneDelegate.swift */; };
 		974165F22912464800AE0A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974165F12912464800AE0A2A /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		973A124B2912500D0082B1B8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		973A124E29127C0C0082B1B8 /* SesacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacAPI.swift; sourceTree = "<group>"; };
 		973A12502912806D0082B1B8 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
+		973A12522912AB500082B1B8 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		974165E52912464700AE0A2A /* Sesac_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesac_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974165E82912464700AE0A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		974165EA2912464700AE0A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				973A124E29127C0C0082B1B8 /* SesacAPI.swift */,
 				973A12502912806D0082B1B8 /* Codable.swift */,
+				973A12522912AB500082B1B8 /* Error.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				973A123E29124CC10082B1B8 /* ProfileViewController.swift in Sources */,
 				973A124A29124F7E0082B1B8 /* BaseView.swift in Sources */,
 				974165E92912464700AE0A2A /* AppDelegate.swift in Sources */,
+				973A12532912AB500082B1B8 /* Error.swift in Sources */,
 				974165EB2912464700AE0A2A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

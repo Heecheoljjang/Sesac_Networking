@@ -45,7 +45,8 @@ final class SignInViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         viewModel.result
-            .bind(onNext: { [weak self] value in
+            .asDriver(onErrorJustReturn: false)
+            .drive(onNext: { [weak self] value in
                 //result가 true면 성공해서 토큰이 있는 상태이므로 토큰 저장하고, 이 토큰으로 profile 요청
                 value ? self?.viewModel.requestProfile() : self?.showAlert()
             })
@@ -53,18 +54,15 @@ final class SignInViewController: BaseViewController {
         
         //profile요청했을때 성공하면 nil이 아닐 것이므로
         viewModel.profileResult
-            .bind(onNext: { [weak self] value in
-                
-                guard let profile = value else { return }
-                
-                value != nil ? self?.presentProfile(profile: profile) : self?.showAlert()
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] value in
+                value != nil ? self?.presentProfile() : self?.showAlert()
             })
             .disposed(by: disposeBag)
     }
     
-    private func presentProfile(profile: Profile) {
+    private func presentProfile() {
         let vc = ProfileViewController()
-        vc.viewModel.profile.accept(profile)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
