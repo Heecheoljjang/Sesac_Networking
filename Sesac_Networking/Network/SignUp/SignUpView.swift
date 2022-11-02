@@ -82,28 +82,24 @@ final class SignUpView: BaseView {
         
         nameTextField.snp.makeConstraints { make in
             make.top.equalTo(signUpLabel.snp.bottom).offset(80)
-            make.centerX.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(52)
         }
         
         emailTextField.snp.makeConstraints { make in
             make.top.equalTo(nameTextField.snp.bottom).offset(80)
-            make.centerX.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(52)
         }
         
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(80)
-            make.centerX.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(52)
         }
         
         doneButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(80)
-            make.centerX.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(52)
         }

@@ -31,7 +31,7 @@ final class SignUpViewController: BaseViewController {
         super.configure()
     }
     
-    func bind() {
+    private func bind() {
         
         Observable.combineLatest(mainView.nameTextField.rx.text.orEmpty, mainView.emailTextField.rx.text.orEmpty, mainView.passwordTextField.rx.text.orEmpty) { name, email, password in
             name.count != 0 && email.count != 0 && password.count >= 8
