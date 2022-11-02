@@ -27,6 +27,8 @@
 		973A124F29127C0C0082B1B8 /* SesacAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A124E29127C0C0082B1B8 /* SesacAPI.swift */; };
 		973A12512912806D0082B1B8 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12502912806D0082B1B8 /* Codable.swift */; };
 		973A12532912AB500082B1B8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12522912AB500082B1B8 /* Error.swift */; };
+		973A12552912DFB60082B1B8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12542912DFB60082B1B8 /* Protocols.swift */; };
+		973A12582912E54A0082B1B8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973A12572912E54A0082B1B8 /* UIViewController+Extension.swift */; };
 		974165E92912464700AE0A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974165E82912464700AE0A2A /* AppDelegate.swift */; };
 		974165EB2912464700AE0A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974165EA2912464700AE0A2A /* SceneDelegate.swift */; };
 		974165F22912464800AE0A2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974165F12912464800AE0A2A /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		973A124E29127C0C0082B1B8 /* SesacAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacAPI.swift; sourceTree = "<group>"; };
 		973A12502912806D0082B1B8 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		973A12522912AB500082B1B8 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		973A12542912DFB60082B1B8 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		973A12572912E54A0082B1B8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		974165E52912464700AE0A2A /* Sesac_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesac_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974165E82912464700AE0A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		974165EA2912464700AE0A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		973A12262912482E0082B1B8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				973A12562912E53A0082B1B8 /* Extension */,
 				973A124829124E5E0082B1B8 /* Entity */,
 				973A124329124D910082B1B8 /* Utility */,
 				973A123029124C4F0082B1B8 /* Profile */,
@@ -131,6 +136,7 @@
 				973A124E29127C0C0082B1B8 /* SesacAPI.swift */,
 				973A12502912806D0082B1B8 /* Codable.swift */,
 				973A12522912AB500082B1B8 /* Error.swift */,
+				973A12542912DFB60082B1B8 /* Protocols.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				973A124B2912500D0082B1B8 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		973A12562912E53A0082B1B8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				973A12572912E54A0082B1B8 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		974165DC2912464700AE0A2A = {
@@ -262,7 +276,9 @@
 				973A124029124CC80082B1B8 /* ProfileView.swift in Sources */,
 				973A123229124C880082B1B8 /* SignUpViewController.swift in Sources */,
 				973A124C2912500D0082B1B8 /* BaseViewController.swift in Sources */,
+				973A12582912E54A0082B1B8 /* UIViewController+Extension.swift in Sources */,
 				973A123829124CA60082B1B8 /* SignInViewController.swift in Sources */,
+				973A12552912DFB60082B1B8 /* Protocols.swift in Sources */,
 				973A123C29124CB80082B1B8 /* SignInViewModel.swift in Sources */,
 				973A123629124C970082B1B8 /* SignUpViewModel.swift in Sources */,
 				973A124229124CD00082B1B8 /* ProfileViewModel.swift in Sources */,
