@@ -48,7 +48,7 @@ final class SignInViewController: BaseViewController {
             .asDriver(onErrorJustReturn: false)
             .drive(onNext: { [weak self] value in
                 //result가 true면 성공해서 토큰이 있는 상태이므로 토큰 저장하고, 이 토큰으로 profile 요청
-                value ? self?.viewModel.requestProfile() : self?.showAlert()
+                value ? self?.viewModel.requestProfile() : self?.showAlert(title: .signIn, message: .signIn)
             })
             .disposed(by: disposeBag)
         
@@ -56,7 +56,7 @@ final class SignInViewController: BaseViewController {
         viewModel.profileResult
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] value in
-                value != nil ? self?.presentProfile() : self?.showAlert()
+                value != nil ? self?.presentProfile() : self?.showAlert(title: .signIn, message: .signIn)
             })
             .disposed(by: disposeBag)
     }
@@ -65,12 +65,5 @@ final class SignInViewController: BaseViewController {
         let vc = ProfileViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-    }
-    
-    private func showAlert() {
-        let alert = UIAlertController(title: "로그인 실패", message: "이메일과 비밀번호를 확인해주세요.", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "확인", style: .cancel)
-        alert.addAction(ok)
-        present(alert, animated: true)
     }
 }

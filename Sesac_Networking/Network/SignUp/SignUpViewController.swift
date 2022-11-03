@@ -54,15 +54,8 @@ final class SignUpViewController: BaseViewController {
             .asDriver(onErrorJustReturn: false)
             .drive(onNext: { [weak self] value in
                 print("회원가입 밸류 \(value)")
-                value ? self?.setRootViewController(vc: SignInViewController()) : self?.showAlert()
+                value ? self?.setRootViewController(vc: SignInViewController()) : self?.showAlert(title: .signUp, message: .signUp)
             })
             .disposed(by: disposeBag)
-    }
-
-    private func showAlert() {
-        let alert = UIAlertController(title: "회원가입 실패", message: "다시 입력해주세요.", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "확인", style: .cancel)
-        alert.addAction(ok)
-        present(alert, animated: true)
     }
 }

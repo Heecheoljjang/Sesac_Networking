@@ -19,4 +19,10 @@ extension UIViewController {
         sceneDelegate?.window?.makeKeyAndVisible()
     }
     
+    func showAlert(title: AlertTitle, message: AlertMessage) {
+        let alert = UIAlertController(title: title.rawValue, message: message.rawValue, preferredStyle: .alert)
+        let ok = UIAlertAction(title: AlertActionTitle.ok, style: .cancel)
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
 }
