@@ -11,11 +11,11 @@ import RxCocoa
 
 final class ProfileViewController: BaseViewController {
     
-    let viewModel = ProfileViewModel()
+    private let viewModel = ProfileViewModel()
     
-    var mainView = ProfileView()
+    private var mainView = ProfileView()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = mainView

@@ -11,11 +11,11 @@ import RxCocoa
 
 final class SignUpViewController: BaseViewController {
     
-    var mainView = SignUpView()
+    private var mainView = SignUpView()
     
-    let viewModel = SignUpViewModel()
+    private let viewModel = SignUpViewModel()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = mainView

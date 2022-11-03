@@ -11,11 +11,11 @@ import RxSwift
 
 final class SignInViewController: BaseViewController {
     
-    var mainView = SignInView()
+    private var mainView = SignInView()
     
-    let viewModel = SignInViewModel()
+    private let viewModel = SignInViewModel()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         view = mainView

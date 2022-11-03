@@ -9,20 +9,20 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class ProfileViewModel: CommonViewModel{
+final class ProfileViewModel {
 
-    struct Input {
-        let logoutTap: ControlEvent<Void>
-    }
-
-    struct Output {
-        let logoutTap: ControlEvent<Void>
-        let profile: Driver<Profile?>
-    }
-
-    func transform(input: Input) -> Output {
-        
-    }
+//    struct Input {
+//        let logoutTap: ControlEvent<Void>
+//    }
+//
+//    struct Output {
+//        let logoutTap: ControlEvent<Void>
+//        let profile: Driver<Profile?>
+//    }
+//
+//    func transform(input: Input) -> Output {
+//
+//    }
     
     var profile = BehaviorRelay<Profile?>(value: nil)
     
