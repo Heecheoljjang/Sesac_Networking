@@ -39,8 +39,13 @@ final class ProfileViewController: BaseViewController {
         print(UserDefaultsManager.fetchLoginValue())
     }
     private func bind() {
-        viewModel.profile
-            .asDriver(onErrorJustReturn: nil)
+        
+        let input = ProfileViewModel.Input(logoutTap: mainView.logoutButton.rx.tap)
+        let output = viewModel.transform(input: input)
+        
+//        viewModel.profile
+//            .asDriver(onErrorJustReturn: nil)
+        output.profile
             .drive(onNext: { [weak self] value in
                 
                 guard let photo = value?.user.photo,
@@ -55,7 +60,8 @@ final class ProfileViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        mainView.logoutButton.rx.tap
+//        mainView.logoutButton.rx.tap
+        output.logoutTap
             .bind(onNext: { [weak self] _ in
                 //유저디폴트 삭제하고 다시 회원가입 화면
                 self?.viewModel.removeLoginValue()

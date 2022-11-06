@@ -22,7 +22,10 @@ final class SignInViewModel {
     }
     
     func requestProfile() {
-        APIService.shared.requestProfile { [weak self] value in
+//        APIService.shared.requestProfile { [weak self] value in
+//            self?.profileResult.accept(value)
+//        }
+        APIService.requestProfile { [weak self] value in
             self?.profileResult.accept(value)
         }
     }

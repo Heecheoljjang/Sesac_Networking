@@ -49,20 +49,47 @@ final class APIService {
         }
     }
     
-    func requestProfile(completionHandler: @escaping ((Profile?) -> ())) {
+//    func requestProfile(completionHandler: @escaping ((Profile?) -> ())) {
+//
+//        let api = SesacAPI.profile
+//
+//        AF.request(api.url, method: .get, headers: api.headers).responseDecodable(of: Profile.self) { response in
+//            switch response.result {
+//            case .success(let data):
+//                completionHandler(data)
+//                print(data)
+//            case .failure(_):
+//                completionHandler(nil)
+//                print(NetworkingError.error)
+//            }
+//        }
+//    }
+    
+    static func requestProfile(completionHandler: @escaping ((Profile?) -> ())) {
         
         let api = SesacAPI.profile
-
-        AF.request(api.url, method: .get, headers: api.headers).responseDecodable(of: Profile.self) { response in
-            switch response.result {
-            case .success(let data):
-                completionHandler(data)
-                print(data)
-            case .failure(_):
-                completionHandler(nil)
-                print(NetworkingError.error)
+        
+        let url = api.url
+        let session = URLSession(configuration: .default)
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.addValue("Bearer \(UserDefaultsManager.fetchAccessToken())", forHTTPHeaderField: "Authorization")
+        
+        session.dataTask(with: urlRequest) { data, response, error in
+            if error != nil {
+                print("error") //일단 임시
+                return
             }
-        }
+            
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode(Profile.self, from: data)
+                    completionHandler(decodedData)
+                } catch {
+                    print("디코딩에러") //임시
+                }
+            }
+        }.resume()
     }
     
 }
