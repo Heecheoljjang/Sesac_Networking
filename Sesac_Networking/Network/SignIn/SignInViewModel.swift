@@ -16,6 +16,9 @@ final class SignInViewModel {
     var profileResult = BehaviorRelay<Profile?>(value: nil)
     
     func requestSignIn(email: String, password: String) {
+//        APIService.shared.requestSignIn(email: email, password: password) { [weak self] value in
+//            self?.result.accept(value)
+//        }
         APIService.shared.requestSignIn(email: email, password: password) { [weak self] value in
             self?.result.accept(value)
         }
